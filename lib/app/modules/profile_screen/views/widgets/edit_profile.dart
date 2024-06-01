@@ -32,10 +32,15 @@ class BaroEditProfile extends StatelessWidget {
               CircleAvatar(
                 radius: 65,
                 backgroundColor: Colors.grey.shade800,
-                child: const Icon(
-                  FluentIcons.person_20_regular,
-                color: Colors.white,
-                ),
+                backgroundImage: editProfileController.profileImageUrl.value.isNotEmpty
+                    ? NetworkImage(editProfileController.profileImageUrl.value)
+                    : null,
+                child: editProfileController.profileImageUrl.value.isEmpty
+                    ? const Icon(
+                        FluentIcons.person_20_regular,
+                        color: Colors.white,
+                      )
+                    : null,
               ),
               Positioned(
                 top: 80,
@@ -50,7 +55,7 @@ class BaroEditProfile extends StatelessWidget {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      
+                      editProfileController.pickImage();
                     },
                     icon: const Icon(FluentIcons.camera_switch_20_regular),
                     iconSize: 25,

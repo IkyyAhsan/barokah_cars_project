@@ -1,17 +1,18 @@
+import 'package:barokah_cars_project/app/modules/add_car/controllers/add_car_controller.dart';
 import 'package:barokah_cars_project/app/modules/add_car/views/widgets/added_a_car.dart';
+import 'package:barokah_cars_project/app/modules/add_car/views/widgets/show_data.dart';
 import 'package:barokah_cars_project/app/modules/car_news/controllers/car_news_controller.dart';
 import 'package:barokah_cars_project/app/modules/home/views/widgets/home_header.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddCarView extends GetView<CarNewsController> {
-  AddCarView({super.key});
+  const AddCarView({super.key});
   
-  final databaseRef = FirebaseDatabase.instance.ref().child('cars');
   @override
   Widget build(BuildContext context) {
+    final addCarController = Get.put(AddCarController());
     return Scaffold(
       backgroundColor: const Color(0xFFF2F1F6),
       body: Padding(
@@ -29,7 +30,7 @@ class AddCarView extends GetView<CarNewsController> {
                   children: [
                     Text("Your List Cars", style: GoogleFonts.plusJakartaSans(textStyle: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black)),),
                     GestureDetector(
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddCarWidget())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCarWidget())),
                       child: Container(
                         width: 75,
                         height: 30,
@@ -58,10 +59,12 @@ class AddCarView extends GetView<CarNewsController> {
                   ],
                 ),
                 const SizedBox(height: 16,),
+
+
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 4,
+                  itemCount: 5,
                   itemBuilder: (context, index) {
                     int firstIndex = index * 2;
                     int secondIndex = firstIndex + 1;

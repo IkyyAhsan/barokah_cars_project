@@ -42,4 +42,6 @@ class BaroTexts {
   static const String suggestionsTitle = "Suggestions";
   static const String recentVisitsTitle = "Recent Visits";
   static const String viewAll = "View All";
+  static const String carNewsTitle = 'Berita Terkait Mobil';
+  static const String carNewsSubtitle = 'Jelajahi berbagai berita terkait Event Mobil di indonesia';
 }

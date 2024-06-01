@@ -13,16 +13,18 @@ dependencies:
   firebase_auth: ^4.19.4
   firebase_core: ^2.30.0
   firebase_database: ^10.5.5
-  firebase_storage: ^11.7.6
+  firebase_storage: ^11.7.7
   fluentui_system_icons: ^1.0.0
   flutter:
     sdk: flutter
+  fluttertoast: ^8.2.5
   get: 4.6.6
   get_cli: ^1.8.1
   git: ^2.2.1
   google_fonts: ^6.2.1
   image_picker: ^1.1.1
   lottie: ^3.1.0
+  random_string: ^2.3.1
   smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
